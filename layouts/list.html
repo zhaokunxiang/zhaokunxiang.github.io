@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <section class="prose">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="post-list">
+      {{ range .RegularPages.ByDate.Reverse }}
+        <article class="post-list-item">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+          <div>
+            <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+            {{ with .Description | default .Summary }}<p>{{ . }}</p>{{ end }}
+          </div>
+        </article>
+      {{ else }}
+        <p class="empty-state">{{ if eq site.Language.Lang "zh" }}暂时还没有文章。{{ else }}No posts yet.{{ end }}</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

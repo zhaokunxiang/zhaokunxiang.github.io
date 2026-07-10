@@ -1,0 +1,23 @@
+<aside class="profile" aria-label="Profile">
+  <a class="profile-avatar" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Params.profile.name }}">
+    {{ site.Params.profile.initials }}
+  </a>
+  <h2><a href="{{ site.Home.RelPermalink }}">{{ site.Params.profile.name }}</a></h2>
+  <p class="profile-role">{{ site.Params.profile.role }}</p>
+  <ul class="profile-links">
+    <li>
+      <span class="profile-label">{{ if eq site.Language.Lang "zh" }}所在地{{ else }}Location{{ end }}</span>
+      <span>{{ site.Params.profile.location }}</span>
+    </li>
+    <li>
+      <span class="profile-label">{{ if eq site.Language.Lang "zh" }}学校{{ else }}Affiliation{{ end }}</span>
+      <a href="{{ site.Params.profile.institution_url }}">{{ site.Params.profile.institution }}</a>
+    </li>
+    <li>
+      <a href="mailto:{{ site.Params.profile.email }}">Email</a>
+    </li>
+    <li>
+      <a href="https://github.com/{{ site.Params.profile.github }}">GitHub</a>
+    </li>
+  </ul>
+</aside>

@@ -1,0 +1,78 @@
+baseURL: http://localhost:1313/
+title: Zhao Kunxiang
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+enableRobotsTXT: true
+
+languages:
+  en:
+    locale: en-US
+    label: English
+    contentDir: content/en
+    title: Zhao Kunxiang
+    weight: 1
+    menus:
+      main:
+        - name: Home
+          pageRef: /
+          weight: 10
+        - name: Blog
+          pageRef: /blog
+          weight: 20
+        - name: About
+          pageRef: /about
+          weight: 30
+    params:
+      profile:
+        name: Zhao Kunxiang
+        initials: ZK
+        role: Undergraduate Student, School of Data Science
+        location: Shenzhen, China
+        institution: The Chinese University of Hong Kong, Shenzhen
+        institution_url: https://www.cuhk.edu.cn/en
+        email: 123090860@link.cuhk.edu.cn
+        github: zhaokunxiang
+  zh:
+    locale: zh-Hans
+    label: 中文
+    contentDir: content/zh
+    title: 赵鲲翔
+    weight: 2
+    menus:
+      main:
+        - name: 主页
+          pageRef: /
+          weight: 10
+        - name: 博客
+          pageRef: /blog
+          weight: 20
+        - name: 关于
+          pageRef: /about
+          weight: 30
+    params:
+      profile:
+        name: 赵鲲翔
+        initials: 赵
+        role: 数据科学学院本科生
+        location: 中国深圳
+        institution: 香港中文大学（深圳）
+        institution_url: https://www.cuhk.edu.cn/
+        email: 123090860@link.cuhk.edu.cn
+        github: zhaokunxiang
+
+params:
+  author: Zhao Kunxiang
+  description: Academic homepage of Zhao Kunxiang.
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+          inline:
+            - ['\(', '\)']

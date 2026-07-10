@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-name" href="{{ site.Home.RelPermalink }}">{{ site.Params.profile.name }}</a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}"{{ if $.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <nav class="language-nav" aria-label="Language">
+      {{ range .AllTranslations }}
+        {{ if ne .Language.Lang site.Language.Lang }}
+          <a href="{{ .RelPermalink }}" lang="{{ .Language.Locale }}">{{ .Language.Label }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+  </div>
+</header>
+
